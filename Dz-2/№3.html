@@ -1,0 +1,16 @@
+<meta charset="utf-8">
+<script>
+    var a = parseInt(prompt("a:")),
+        b = parseInt(prompt("b:"));
+
+    if (isNaN(a) || isNaN(b)) {
+        alert("Введите 2 числа пожалуйста");
+    } else if (a >= 0 && b >= 0) {
+        alert("Числа положительные, их разность= " + Math.abs(a - b));
+    } else if (a < 0 && b < 0) {
+        alert("Числа отрицательные, их произведение= " + (a * b));
+    } else {
+        alert("Числа разных знаков, их сумма= " + (a + b));
+    }
+
+</script>

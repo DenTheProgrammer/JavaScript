@@ -1,0 +1,48 @@
+<meta charset="utf-8">
+<script>
+    var spins = prompt("Spin count:");
+    var spinsResult = [];
+    for (var i = 0; i < spins; i++) {
+        spinsResult.push(Math.floor(Math.random() * 37));
+    }
+    console.log(spinsResult);
+
+
+
+
+    var kolvo = 0;
+
+
+    for (var n = 0; n <= 36; n++) {
+        kolvo = 0;
+        for (i = 0; i < spinsResult.length; i++) {
+            if (spinsResult[i] == n) {
+                kolvo++;
+            }
+
+        }
+
+        console.log("Процент выпадения " + n + "----" + kolvo / spinsResult.length * 100 + "%");
+    }
+
+    var Length = 1;
+    var maxLength = 1;
+    var maxIndex = 0;
+    for (i = 0; i < spinsResult.length - 1; i++) {
+        if ((spinsResult[i] % 2 == spinsResult[i + 1] % 2) && (spinsResult[i] != 0)) {
+            Length++;
+            if (Length > maxLength) {
+                maxLength = Length;
+                maxIndex = (i + 3) - maxLength; //хз че так
+            }
+        } else {
+            Length = 1;
+        }
+
+
+
+    }
+    console.log("Подряд одного цвета= " + maxLength + " Начиная с " + maxIndex + " попытки");
+    console.log("Вероятность этого " + Math.pow(18 / 37, maxLength - 1) * 100 + "% Или примерно 1 на "+ Math.round(Math.pow(37/18,maxLength-1))+" попыток");
+
+</script>

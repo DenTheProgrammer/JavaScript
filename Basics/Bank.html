@@ -1,0 +1,11 @@
+<meta charset="utf-8">
+<script>
+	var summa = parseInt(prompt("Введите начальный вклад:"));
+	var procent = parseInt(prompt("Введите годовой процент:"));
+	var years = parseInt(prompt("Введите количество лет:"));
+	for (var i = 1; i <= years; i++) {
+		summa += (summa / 100 * procent);
+		alert("Конец " + i + "-го года: на счету: " + Math.round(summa));
+	}
+
+</script>

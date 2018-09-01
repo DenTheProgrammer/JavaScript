@@ -1,0 +1,130 @@
+<meta charset="utf-8">
+<script>
+    var deck52 = [
+        [2, "♠"],
+        [2, "♥"],
+        [2, "♣"],
+        [2, "♦"],
+        [3, "♠"],
+        [3, "♥"],
+        [3, "♣"],
+        [3, "♦"],
+        [4, "♠"],
+        [4, "♥"],
+        [4, "♣"],
+        [4, "♦"],
+        [5, "♠"],
+        [5, "♥"],
+        [5, "♣"],
+        [5, "♦"],
+        [6, "♠"],
+        [6, "♥"],
+        [6, "♣"],
+        [6, "♦"],
+        [7, "♠"],
+        [7, "♥"],
+        [7, "♣"],
+        [7, "♦"],
+        [8, "♠"],
+        [8, "♥"],
+        [8, "♣"],
+        [8, "♦"],
+        [9, "♠"],
+        [9, "♥"],
+        [9, "♣"],
+        [9, "♦"],
+        [10, "♠"],
+        [10, "♥"],
+        [10, "♣"],
+        [10, "♦"],
+        ["J", "♠"],
+        ["J", "♥"],
+        ["J", "♣"],
+        ["J", "♦"],
+        ["Q", "♠"],
+        ["Q", "♥"],
+        ["Q", "♣"],
+        ["Q", "♦"],
+        ["K", "♠"],
+        ["K", "♥"],
+        ["K", "♣"],
+        ["K", "♦"],
+        ["A", "♠"],
+        ["A", "♥"],
+        ["A", "♣"],
+        ["A", "♦"]
+    ];
+
+    var kozir = "♠";
+
+    function randomInt(min, max) { //от min до max включительно
+        return (Math.floor(Math.random() * (max - min + 1) + min));
+    }
+
+
+    function showDeck(deck) {
+        for (i = 0; i < deck.length; i++) {
+            console.log(deck[i].join(""));
+        }
+    }
+
+
+    function shuffle(deck) {
+        var shuffleCount = randomInt(200, 1000);
+        var bufer;
+        var card1;
+        var card2;
+        for (i = 0; i < shuffleCount; i++) {
+            card1 = randomInt(0, 51);
+            card2 = randomInt(0, 51);
+            bufer = deck[card2];
+            deck[card2] = deck[card1];
+            deck[card1] = bufer;
+
+        }
+    }
+
+
+    function dealCards(deck, numberOfCards) {
+        var dealedCards = [];
+        for (i = 0; i < numberOfCards; i++) {
+            dealedCards.push(deck.pop());
+
+        }
+        return dealedCards;
+    }
+
+
+    function compareCards(card1, card2) {
+        var def = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
+        var def1 = 0,
+            def2 = 0;
+        if (card1[1] == kozir && card2[1] != kozir) { //только 1я карта козырная
+            return ">";
+        } else if (card1[1] != kozir && card2[1] == kozir) { //только 2я карта козырная
+            return "<";
+        } else if (card1[1] == card2[1]) { //карты одной масти
+
+            while (card1[0] != def[def1]) {
+                def1++;
+            }
+            while (card2[0] != def[def2]) {
+                def2++;
+            }
+            if (def1 > def2) {
+                return ">";
+            } else {
+                return "<";
+            }
+        } else {
+            return "error";
+        }
+    }
+
+
+
+    shuffle(deck52);
+   var playerHand = dealCards(deck52,6);
+    showDeck(playerHand);
+
+</script>
