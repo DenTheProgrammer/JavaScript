@@ -14,10 +14,16 @@
         return sum;
     }
 
-    for (var i = 0; i < randomInt(1, 10); i++) {
+
+
+
+    var basketItemsCount = randomInt(1, 10);
+    
+    for (var i = 0; i < basketItemsCount; i++) {
         basket.push(randomInt(100, 5000));
     }
+    
     console.log("Цены на товары в корзине: " + basket.join("руб, ") + "руб");
-    console.log("Суммарная стоимость товаров в корзине: " + countBasketPrice(basket) + "руб")
+    console.log("Суммарная стоимость товаров в корзине: " + countBasketPrice(basket) + "руб");
 
 </script>
