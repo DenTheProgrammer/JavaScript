@@ -1,0 +1,23 @@
+<meta charset="utf-8">
+<script>
+    var basket = [];
+
+    function randomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    function countBasketPrice(bask) {
+        var sum = 0;
+        for (var i = 0; i < bask.length; i++) {
+            sum += bask[i];
+        }
+        return sum;
+    }
+
+    for (var i = 0; i < randomInt(1, 10); i++) {
+        basket.push(randomInt(100, 5000));
+    }
+    console.log("Цены на товары в корзине: " + basket.join("руб, ") + "руб");
+    console.log("Суммарная стоимость товаров в корзине: " + countBasketPrice(basket) + "руб")
+
+</script>
