@@ -1,21 +1,29 @@
 <meta charset="utf-8">
 <script>
-
-function isPrime(n) {
-    for(var i=2;i<Math.sqrt(n)+1;i++){
-        if(n%i==0){
+    function isPrime(n) {
+        if (n > 2) {
+            for (var i = 2; i <= Math.ceil(Math.sqrt(n)); i++) {
+                if (n % i == 0) {
+                    return false;
+                }
+            }
+        } else if (n < 2) {
             return false;
         }
+        return true;
     }
-    return true;
-}
 
-function primesInInterval(from,to) {
-    for(var i=from;i<=to;i++){
-        if(isPrime(i)){
-            console.log(i);
+    function primesInInterval(from, to) {
+        for (var i = from; i <= to; i++) {
+            if (isPrime(i)) {
+                console.log(i);
+            }
         }
     }
-}
-primesInInterval(1,100);
+    var timerStart, timerStop;
+    timerStart = Date.now();
+    primesInInterval(-5, 1000000);
+    timerStop = Date.now();
+    console.log("время работы: " + (timerStop - timerStart) + "ms");
+
 </script>
