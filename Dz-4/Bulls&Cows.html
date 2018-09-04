@@ -1,0 +1,25 @@
+<meta charset="utf-8">
+<script>
+    function generateNumber(digits) {
+        var figures = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+        var generatedNumber = [];
+        var randomedIndex;
+
+
+        for (var i = 0; i < digits; i++) {
+            if (i == 0) {
+                randomedIndex = Math.floor(Math.random() * (figures.length-1)+1); //первая цифра не 0
+                generatedNumber.push(figures[randomedIndex]);
+            } else {
+                randomedIndex = Math.floor(Math.random() * (figures.length)); //остальные любые, но без повторов
+                generatedNumber.push(figures[randomedIndex]);
+            }
+            figures.splice(randomedIndex, 1);
+        }
+       return generatedNumber;
+    }
+
+    
+    
+    console.log(generateNumber(4));
+</script>
