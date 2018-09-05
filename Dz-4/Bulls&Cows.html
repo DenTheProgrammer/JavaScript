@@ -1,25 +1,64 @@
 <meta charset="utf-8">
 <script>
-    function generateNumber(digits) {
-        var figures = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    function generateNumber() {
+        var figures = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
         var generatedNumber = [];
         var randomedIndex;
 
 
         for (var i = 0; i < digits; i++) {
             if (i == 0) {
-                randomedIndex = Math.floor(Math.random() * (figures.length-1)+1); //первая цифра не 0
-                generatedNumber.push(figures[randomedIndex]);
+                randomedIndex = Math.floor(Math.random() * (figures.length - 1) + 1); //первая цифра не 0
             } else {
-                randomedIndex = Math.floor(Math.random() * (figures.length)); //остальные любые, но без повторов
-                generatedNumber.push(figures[randomedIndex]);
+                randomedIndex = Math.floor(Math.random() * (figures.length)); //остальные любые
             }
-            figures.splice(randomedIndex, 1);
+
+            generatedNumber.push(figures[randomedIndex]);
+            figures.splice(randomedIndex, 1); //убираем существующие уже цифры
         }
-       return generatedNumber;
+        return generatedNumber;
     }
 
-    
-    
-    console.log(generateNumber(4));
+
+
+
+
+
+    function guess(guessedNumber, gameNumber) {
+        var bulls, cows;
+        bulls = 0;
+        cows = 0;
+        for (var i = 0; i < gameNumber.length; i++) { //подсчет быков
+            if (gameNumber[i] == guessedNumber[i]) {
+                bulls++;
+            }
+        }
+
+        for (var i = 0; i < gameNumber.length; i++) {
+            if (guessedNumber.indexOf(gameNumber[i]) != -1) {
+                cows++;
+            }
+        }
+
+        return [bulls, cows];
+    }
+
+
+    ////////////////////////Game////////////////
+
+    var digits = 4;
+    var guessedNumber;
+    var gameNumber = generateNumber();
+    var bulls, cows;
+    var attemps=0;
+    console.log(gameNumber);
+    do {
+        guessedNumber = prompt("Введите предполагаемое число:").split("");
+        bulls = guess(guessedNumber, gameNumber)[0];
+        cows = guess(guessedNumber, gameNumber)[1];
+        alert("Быков: " + bulls + ", Коров: " + cows);
+        attemps++;
+    }
+    while (bulls != digits);
+    alert("Победа! Вы отгадали число за "+attemps+" попыток.");
 </script>
