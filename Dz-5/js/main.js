@@ -7,19 +7,19 @@ for (var i = 0; i < 8; i++) {
 	for (var j = 0; j < 4; j++) {
 		if (i % 2 == 0) {
 			div = document.createElement("div");
-			div.classList.add("cell", "white");
+			div.classList.add("cell", "black");
 			board.appendChild(div);
 
 			div = document.createElement("div");
-			div.classList.add("cell", "black");
+			div.classList.add("cell", "white");
 			board.appendChild(div);
 		} else {
 			div = document.createElement("div");
-			div.classList.add("cell", "black");
+			div.classList.add("cell", "white");
 			board.appendChild(div);
 
 			div = document.createElement("div");
-			div.classList.add("cell", "white");
+			div.classList.add("cell", "black");
 			board.appendChild(div);
 		}
 	}
