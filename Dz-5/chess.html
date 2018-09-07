@@ -1,23 +1,14 @@
-<meta charset="utf-8">
-<script>
-    function numberToObject(num) {
-        var ed, des, sot;
-        if (num > 999) {
-            console.log("Введите чило от 0 до 999");
-            return {};
-        }
-        ed = num % 10;
-        des = Math.floor(num / 10) % 10;
-        sot = Math.floor(num / 100);
+<!DOCTYPE html>
+<html>
 
-        return {
-            "единицы": ed,
-            "десятки": des,
-            "сотни": sot
-        }
-    }
-    console.log(numberToObject(4524));
-    console.log(numberToObject(314));
-    
+<head>
+    <meta charset="UTF-8">
+    <title>Chess</title>
+</head>
 
-</script>
+<body>
+    <script src="js/main.js"></script>
+    <!--    тут должно быть 64 div-->
+</body>
+
+</html>
