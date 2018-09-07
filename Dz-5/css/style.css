@@ -8,12 +8,17 @@
 	height: 50vw;
 	margin: 0 auto;
 	display: flex;
+	flex-direction: column-reverse;
 	flex-wrap: wrap;
 }
 .cell{
     height: calc(50vw / 8);
     width: calc(50vw / 8);
-    background: black;
-	border: solid 1px green;
-	display: inline-block;
+	border: solid 1px #c97d33;
+}
+.white{
+	background: #e3a152;
+}
+.black{
+	background: #97270a;
 }
