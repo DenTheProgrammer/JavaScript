@@ -24,9 +24,11 @@ for (var i = 0; i < 8; i++) {
 		}
 	}
 }
-var k=3;
+
+var cells = document.getElementsByClassName("cell");
+var c = 0;
 for (i = 1; i < 9; i++) {
 	for (j = 1; j < 9; j++) {
-		board.childNodes[k++].classList.add(letters[i]+j);
+		cells[c++].classList.add(letters[i]+j);//добавляем класс с номером ячейки
 	}
 }
