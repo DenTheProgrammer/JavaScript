@@ -60,7 +60,7 @@ body{
 	font-size: 6vw;
 }.whiteBishop:before{
 	content: "♗";
-	font-size: 6vw;
+	font-size: 5vw;
 }.whiteKnight:before{
 	content: "♘";
 	font-size: 6vw;
@@ -81,7 +81,7 @@ body{
 	font-size: 6vw;
 }.blackBishop:before{
 	content: "♝";
-	font-size: 6vw;
+	font-size: 5vw;
 }.blackKnight:before{
 	content: "♞";
 	font-size: 6vw;
