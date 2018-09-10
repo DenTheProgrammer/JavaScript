@@ -1,35 +1,47 @@
-*{
+* {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
-body{
+
+body {
 	background: lightblue;
 }
-.board{
-	width: 50vw;
-	height: 50vw;
+
+.board {
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column-reverse;
 	flex-wrap: wrap;
 }
-.cell{
-    height: calc(50vw / 8);
-    width: calc(50vw / 8);
+
+.cell {
 	border: solid 1px #c97d33;
 }
-.white{
+
+.white {
 	background: #e3a152;
 }
-.black{
+
+.black {
 	background: #97270a;
 }
 
 /*--------------Фигуры------------------*/
 
 
-.blackPawn, .blackKing, .blackQueen, .blackRook, .blackBishop, .blackKnight, .whitePawn, .whiteKing, .whiteQueen, .whiteRook, .whiteBishop, .whiteKnight{
+.blackPawn,
+.blackKing,
+.blackQueen,
+.blackRook,
+.blackBishop,
+.blackKnight,
+.whitePawn,
+.whiteKing,
+.whiteQueen,
+.whiteRook,
+.whiteBishop,
+.whiteKnight {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -37,52 +49,134 @@ body{
 
 
 
-.blackPawn, .blackKing, .blackQueen, .blackRook, .blackBishop, .blackKnight{
+.blackPawn,
+.blackKing,
+.blackQueen,
+.blackRook,
+.blackBishop,
+.blackKnight {
 	color: black;
 }
-.whitePawn, .whiteKing, .whiteQueen, .whiteRook, .whiteBishop, .whiteKnight{/*Опционально, по мне так лучше*/
+
+.whitePawn,
+.whiteKing,
+.whiteQueen,
+.whiteRook,
+.whiteBishop,
+.whiteKnight {
+	/*Опционально, по мне так лучше*/
 	color: white;
 }
 
 
 
-.whitePawn:before{
+.whitePawn:before {
 	content: "♙";
-	font-size: 6vw;
-}.whiteKing:before{
+}
+
+.whiteKing:before {
 	content: "♔";
-	font-size: 6vw;
-}.whiteQueen:before{
+}
+
+.whiteQueen:before {
 	content: "♕";
-	font-size: 6vw;
-}.whiteRook:before{
+}
+
+.whiteRook:before {
 	content: "♖";
-	font-size: 6vw;
-}.whiteBishop:before{
+}
+
+.whiteBishop:before {
 	content: "♗";
-	font-size: 5vw;
-}.whiteKnight:before{
+}
+
+.whiteKnight:before {
 	content: "♘";
-	font-size: 6vw;
 }
 
 
-.blackPawn:before{
+.blackPawn:before {
 	content: "♟";
-	font-size: 6vw;
-}.blackKing:before{
+}
+
+.blackKing:before {
 	content: "♚";
-	font-size: 6vw;
-}.blackQueen:before{
+}
+
+.blackQueen:before {
 	content: "♛";
-	font-size: 6vw;
-}.blackRook:before{
+}
+
+.blackRook:before {
 	content: "♜";
-	font-size: 6vw;
-}.blackBishop:before{
+}
+
+.blackBishop:before {
 	content: "♝";
-	font-size: 5vw;
-}.blackKnight:before{
+}
+
+.blackKnight:before {
 	content: "♞";
-	font-size: 6vw;
+}
+
+
+
+
+
+
+
+/*доска всегда размера минимального размера окна(ширины или высоты)*/
+@media screen and (orientation: landscape) {
+	.board {
+		width: 100vh;
+		height: 100vh;
+	}
+
+	.cell {
+		height: calc(100vh / 8);
+		width: calc(100vh / 8);
+
+	}
+
+	.blackPawn,
+	.blackKing,
+	.blackQueen,
+	.blackRook,
+	.blackBishop,
+	.blackKnight,
+	.whitePawn,
+	.whiteKing,
+	.whiteQueen,
+	.whiteRook,
+	.whiteBishop,
+	.whiteKnight {
+		font-size: 11vh;
+	}
+}
+
+@media screen and (orientation: portrait) {
+	.board {
+		width: 100vw;
+		height: 100vw;
+	}
+
+	.cell {
+		height: calc(100vw / 8);
+		width: calc(100vw / 8);
+
+	}
+	.blackPawn,
+	.blackKing,
+	.blackQueen,
+	.blackRook,
+	.blackBishop,
+	.blackKnight,
+	.whitePawn,
+	.whiteKing,
+	.whiteQueen,
+	.whiteRook,
+	.whiteBishop,
+	.whiteKnight {
+		font-size: 11vw;
+	}
 }
