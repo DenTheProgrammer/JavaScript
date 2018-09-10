@@ -32,3 +32,11 @@ for (i = 1; i < 9; i++) {
 		cells[c++].classList.add(letters[i]+j);//добавляем класс с номером ячейки
 	}
 }
+
+//пешки
+for(i=1;i<9;i++){
+document.getElementsByClassName(letters[i]+2)[0].classList.add("whitePawn");
+}
+for(i=1;i<9;i++){
+document.getElementsByClassName(letters[i]+7)[0].classList.add("blackPawn");
+}
