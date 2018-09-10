@@ -25,3 +25,64 @@ body{
 .black{
 	background: #97270a;
 }
+
+/*--------------Фигуры------------------*/
+
+
+.blackPawn, .blackKing, .blackQueen, .blackRook, .blackBishop, .blackKnight, .whitePawn, .whiteKing, .whiteQueen, .whiteRook, .whiteBishop, .whiteKnight{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+
+.blackPawn, .blackKing, .blackQueen, .blackRook, .blackBishop, .blackKnight{
+	color: black;
+}
+.whitePawn, .whiteKing, .whiteQueen, .whiteRook, .whiteBishop, .whiteKnight{/*Опционально, по мне так лучше*/
+	color: white;
+}
+
+
+
+.whitePawn:before{
+	content: "♙";
+	font-size: 6vw;
+}.whiteKing:before{
+	content: "♔";
+	font-size: 6vw;
+}.whiteQueen:before{
+	content: "♕";
+	font-size: 6vw;
+}.whiteRook:before{
+	content: "♖";
+	font-size: 6vw;
+}.whiteBishop:before{
+	content: "♗";
+	font-size: 6vw;
+}.whiteKnight:before{
+	content: "♘";
+	font-size: 6vw;
+}
+
+
+.blackPawn:before{
+	content: "♟";
+	font-size: 6vw;
+}.blackKing:before{
+	content: "♚";
+	font-size: 6vw;
+}.blackQueen:before{
+	content: "♛";
+	font-size: 6vw;
+}.blackRook:before{
+	content: "♜";
+	font-size: 6vw;
+}.blackBishop:before{
+	content: "♝";
+	font-size: 6vw;
+}.blackKnight:before{
+	content: "♞";
+	font-size: 6vw;
+}
