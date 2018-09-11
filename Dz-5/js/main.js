@@ -66,3 +66,22 @@ function setStarnPosition() {
 }
 
 setStarnPosition();
+
+var active;
+var turn = "begin";
+for (i = 0; i < 64; i++) {
+	document.querySelectorAll(".cell")[i].addEventListener("click", function () {
+		if (turn === "begin") {
+			active = this.classList[3];
+			this.classList.remove(active);
+			turn = "end";
+		} else if (turn === "end") {
+			if (this.classList[3] === undefined) {
+				this.classList.add(active);
+			} else {
+				this.classList.replace(this.classList[3], active);
+			}
+			turn = "begin";
+		}
+	})
+}
