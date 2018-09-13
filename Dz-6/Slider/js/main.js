@@ -21,8 +21,28 @@ document.querySelector(".slider-container").onclick = function (e) {
             active = imgNumber;
         }
     }
-    document.querySelector(".active").classList.toggle("active");
-    document.querySelector("#img" + active).classList.toggle("active");
+    //переключение слайдов
+    document.querySelectorAll(".active")[0].classList.toggle("active");
+    document.querySelectorAll(".img" + active)[0].classList.toggle("active");
+    //переключение превьюшек
+    document.querySelectorAll(".active")[1].classList.toggle("active");
+    document.querySelectorAll(".img" + active)[1].classList.toggle("active");
     clearInterval(timer); //сброс таймера при клике пользователя
-    autoSwitch();
+        autoSwitch();
 }
+
+
+
+//переключение по нажатию превью
+document.querySelector(".buttons").addEventListener("click", function (e) {
+    if (e.target.tagName === "IMG") {
+        active = e.target.classList[0][3];
+
+        //переключение слайдов
+        document.querySelectorAll(".active")[0].classList.toggle("active");
+        document.querySelectorAll(".img" + active)[0].classList.toggle("active");
+        //переключение превьюшек
+        document.querySelectorAll(".active")[1].classList.toggle("active");
+        document.querySelectorAll(".img" + active)[1].classList.toggle("active");
+    }
+})

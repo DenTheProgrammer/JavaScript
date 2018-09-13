@@ -1,43 +1,56 @@
-*, *:after, *:before {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	transition: 2s;
+*,
+*:after,
+*:before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 
 .slider-container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	margin-top: 50px;
-}
-.buttons {
-	display: flex;
-	justify-content: space-around;
-}
-button{
-	height: 30px;
-	padding: 5px;
-	margin: 20px 150px;
-	background: green;
-	border: none;
-	color: white;
-	cursor: pointer;
-}
-.slider {
-	border: solid 2px blue;
-	width: 500px;
-	height: 300px;
-	overflow: hidden;
-	position: relative;
-	background: lightblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
 }
 
-.slider img{
-	position: absolute;
-	opacity: 0;
+.buttons {
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
 }
-.slider .active{
-	opacity: 1;
+
+.buttons img {
+    width: 100px;
+    height: 60px;
+}
+
+button {
+    height: 30px;
+    padding: 5px;
+    background: green;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.slider {
+    width: 500px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    background: lightblue;
+}
+
+.slider img {
+    position: absolute;
+    opacity: 0;
+    transition: 1s;
+}
+
+.slider-container .active {
+    opacity: 1;
+    outline: solid 2px blue;
 }
