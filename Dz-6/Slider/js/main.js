@@ -11,7 +11,7 @@ function autoSwitch() {
 }
 
 
-document.querySelector(".slider-container").addEventListener("click", function (e) {
+document.querySelector(".slider-container").onclick = function (e) {
 	if (e.target.classList[0] === "next") { //листаем вперед
 		active = (active) % 3 + 1;
 	} else if (e.target.classList[0] === "prev") { //назад
@@ -25,4 +25,4 @@ document.querySelector(".slider-container").addEventListener("click", function (
 	document.querySelector("#img" + active).classList.toggle("active");
 	clearInterval(timer); //сброс таймера при клике пользователя
 	autoSwitch();
-})
+}
