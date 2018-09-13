@@ -10,8 +10,8 @@ function autoSwitch() {
         7000);
 }
 
-var imgNumber = document.querySelectorAll(".slider img").length;
-document.querySelector(".slider-container").onclick = function (e) {
+var imgNumber = document.querySelectorAll(".slider-slides img").length;
+document.querySelector(".slider").onclick = function (e) {
     if (e.target.classList[0] === "next") { //листаем вперед
         active = (active) % imgNumber + 1;
     } else if (e.target.classList[0] === "prev") { //назад
@@ -28,13 +28,13 @@ document.querySelector(".slider-container").onclick = function (e) {
     document.querySelectorAll(".active")[1].classList.toggle("active");
     document.querySelectorAll(".img" + active)[1].classList.toggle("active");
     clearInterval(timer); //сброс таймера при клике пользователя
-        autoSwitch();
+    autoSwitch();
 }
 
 
 
 //переключение по нажатию превью
-document.querySelector(".buttons").addEventListener("click", function (e) {
+document.querySelector(".slider-preview").addEventListener("click", function (e) {
     if (e.target.tagName === "IMG") {
         active = e.target.classList[0][3];
 
